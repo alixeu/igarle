@@ -1,0 +1,3 @@
+.DS_Store
+/outputs/pi-loop/
+/.agents/loop/**/__pycache__/
