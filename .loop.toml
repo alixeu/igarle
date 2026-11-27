@@ -1,0 +1,29 @@
+version = 1
+
+[github]
+repository = "alixeu/igarle"
+branch = "master"
+operator_ids = [85817422]
+workflow = ".github/workflows/pi-loop.yml"
+required_job = "pi-loop"
+
+[pi]
+binary = "pi"
+model = ""
+
+[run]
+step_timeout = 900
+check_timeout = 180
+scan_interval = 3600
+poll_interval = 30
+retries = 3
+max_steps = 24
+stall_timeout = 3600
+review_diff_limit = 23000
+
+[project]
+allowed_paths = ["README.md", "docs/**", "src/**", "tests/**"]
+auto_paths = ["src/**", "tests/**"]
+
+[checks.loop-tests]
+argv = ["python3", "-B", "-m", "unittest", "discover", "-s", ".agents/loop/tests", "-v"]
